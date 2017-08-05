@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   Text,
   View
 } from 'react-native';
 
-export default class Dato extends Component {
+export default class Dato extends React.Component {
   render() {
     return (
 
@@ -21,14 +21,14 @@ export default class Dato extends Component {
                   {this.props.valor}
                 </Text>
             </View>
-        </View>            
+        </View>
 
     );
   }
 }
 
 const styles = StyleSheet.create({
-  detalleResultado: {  
+  detalleResultado: {
     alignItems: 'center',
     backgroundColor:'orange',
     margin:2,
@@ -45,11 +45,11 @@ const styles = StyleSheet.create({
 
   titulo:{
     alignItems: 'center',
-    fontWeight: 'bold',    
+    fontWeight: 'bold',
     fontSize: 15,
     justifyContent: 'center',
     alignItems: 'center',
-  },  
+  },
 
   dato:{
     alignItems:'center',
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   red:{
     flexDirection:'column',
     color: 'white',
-    fontWeight: 'bold',    
+    fontWeight: 'bold',
     fontSize: 25,
   },
 

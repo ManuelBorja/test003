@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   Text,
@@ -10,14 +10,15 @@ import {
 
 } from 'react-native';
 import LoginForm from './LoginForm';
+import {Actions} from 'react-native-router-flux';
 
-export default class Login extends Component {
+export default class Login extends React.Component {
   render() {
   	return(
      <KeyboardAvoidingView behavior="padding" style={styles.container}>
-	     <View style={styles.logoContainer}>        
+	     <View style={styles.logoContainer}>
 		     <Image style={styles.logo}
-		      source={require('../img/logosolo.png')} 
+		      source={require('../img/logosolo.png')}
 		     />
 		     <Text style={styles.titulo}>
 		     Tablero de Control

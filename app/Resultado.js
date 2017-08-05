@@ -1,24 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   Text,
   View
 } from 'react-native';
-
 import Dato from './Dato'
 
-export default class Resultado extends Component {
+export default class Resultado extends React.Component {
   render() {
     return (
-    
+
         <View style={styles.resultado}>
           <View style={styles.tituloResultado}>
             <Text style={styles.textoTituloResultado}>
               {this.props.titulo}
-            </Text>          
+            </Text>
           </View>
           <View style={styles.datosResultado}>
-              <Dato nombre="Eficacia" valor="100%"/>          
+              <Dato nombre="Eficacia" valor="100%"/>
               <Dato nombre="Eficiencia" valor="100%"/>
               <Dato nombre="Ejecución" valor="100%"/>
           </View>
@@ -48,4 +47,3 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
 });
-

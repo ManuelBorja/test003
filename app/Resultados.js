@@ -1,10 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
-import React, { Component } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   Text,
@@ -12,10 +6,10 @@ import {
   Button,
   ScrollView
 } from 'react-native';
-
 import Resultado from './Resultado'
+import {Actions} from 'react-native-router-flux';
 
-export default class Resultados extends Component {
+export default class Resultados extends React.Component {
   render() {
     return (
       <View style={styles.container}>
@@ -32,15 +26,15 @@ export default class Resultados extends Component {
           </Text>
         </View>
 
-        <View style={styles.tituloSeccion}>  
+        <View style={styles.tituloSeccion}>
           <Button
             title="Trimestre"
             color="grey"
-          />     
+          />
           <Button
             title="Acumulado"
             color="black"
-          />     
+          />
         </View>
 
         <ScrollView>
@@ -51,7 +45,7 @@ export default class Resultados extends Component {
           <Resultado titulo="Sub Regiones" eficacia="55%" eficiencia="53%" ejecucion="45%" />
           <Resultado titulo="Económica y Transporte" eficacia="49%" eficiencia="50%" ejecucion="45%" />
         </ScrollView>
-      
+
       </View>
     );
   }

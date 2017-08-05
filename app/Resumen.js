@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import { VictoryLine, VictoryChart, VictoryTheme } from "victory-native";
 import Grafico from './Grafico';
+import {Actions} from 'react-native-router-flux';
 
 export default class Resumen extends React.Component {
   render() {

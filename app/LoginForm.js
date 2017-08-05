@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   Text,
@@ -8,34 +8,33 @@ import {
   Button,
   TouchableOpacity,
   StatusBar
-
 } from 'react-native';
 
-export default class LoginForm extends Component {
+export default class LoginForm extends React.Component {
   render() {
   	return(
      <View style={styles.container}>
         <StatusBar barstyle="light-content" />
 
-		<TextInput 
+		<TextInput
 		 placeholder = "Usuario"
-		 placeholderTextColor = 'rgba(0,0,0,0.2)' 
-		 returnKeyType="next" 
+		 placeholderTextColor = 'rgba(0,0,0,0.2)'
+		 returnKeyType="next"
 		 onSubmitEditing = {() => this.passwordInput.focus() }
 		 autoCapitalize = "none"
 		 autoCorrect = {false}
 		 style = {styles.input}
-		/>		
-		<TextInput 
+		/>
+		<TextInput
 		 placeholder = "Contraseña"
 		 placeholderTextColor = 'rgba(0,0,0,0.2)'
-		 returnKeyType="go" 
-		 secureTextEntry 
-		 style = {styles.input} 
+		 returnKeyType="go"
+		 secureTextEntry
+		 style = {styles.input}
 		 ref={(input) => this.passwordInput = input}
 		/>
 
-		<TouchableOpacity style={styles.buttonContainer}>	 
+		<TouchableOpacity style={styles.buttonContainer}>
 		 <Text style={styles.buttonText}>Login</Text>
 		</TouchableOpacity>
 
