@@ -19,6 +19,7 @@ export default class Resumen extends React.Component {
         <TouchableOpacity onPress={() => this.handlePress()} >
                 <Text style={styles.Titulo}>{"INSTITUCIONAL - RESUMEN"}</Text>
         </TouchableOpacity>
+
         <Grafico titulo="EFICACIA"
                  acu="84%"
                  tri="76%"
@@ -63,7 +64,7 @@ const styles = StyleSheet.create({
   },
   Titulo:{
     marginBottom:15,
-    paddingTop:25,
+    paddingTop:10,
     paddingBottom:10,
     backgroundColor:'#008ae6',
     textAlign:'center',

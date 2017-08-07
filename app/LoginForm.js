@@ -32,6 +32,7 @@ export default class LoginForm extends React.Component {
 		 autoCorrect = {false}
 		 style = {styles.input}
 		/>
+		
 		<TextInput
 		 placeholder = "Contraseña"
 		 placeholderTextColor = 'rgba(0,0,0,0.2)'
