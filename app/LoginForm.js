@@ -10,7 +10,14 @@ import {
   StatusBar
 } from 'react-native';
 
+import { Actions } from 'react-native-router-flux';
+
 export default class LoginForm extends React.Component {
+
+  handlePress() {
+	Actions.resumen();
+  };
+
   render() {
   	return(
      <View style={styles.container}>
@@ -34,8 +41,10 @@ export default class LoginForm extends React.Component {
 		 ref={(input) => this.passwordInput = input}
 		/>
 
-		<TouchableOpacity style={styles.buttonContainer}>
-		 <Text style={styles.buttonText}>Login</Text>
+		<TouchableOpacity 
+		  onPress={() => this.handlePress()} 
+		  style={styles.buttonContainer}>
+		  <Text style={styles.buttonText}>Login</Text>
 		</TouchableOpacity>
 
      </View>

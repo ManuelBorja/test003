@@ -7,7 +7,6 @@ import {
   ScrollView
 } from 'react-native';
 import Resultado from './Resultado'
-import {Actions} from 'react-native-router-flux';
 
 export default class Resultados extends React.Component {
   render() {

@@ -1,18 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, TouchableOpacity } from 'react-native';
 import { VictoryLine, VictoryChart, VictoryTheme } from "victory-native";
 import Grafico from './Grafico';
 import {Actions} from 'react-native-router-flux';
 
 export default class Resumen extends React.Component {
+
+  handlePress() {
+     Actions.resultados();
+  };
+
   render() {
     return (
       <View style={styles.Container} >
 
         <StatusBar barstyle="light-content" />
 
-        <Text style={styles.Titulo}>{"INSTITUCIONAL - RESUMEN"}</Text>
-
+        <TouchableOpacity onPress={() => this.handlePress()} >
+                <Text style={styles.Titulo}>{"INSTITUCIONAL - RESUMEN"}</Text>
+        </TouchableOpacity>
         <Grafico titulo="EFICACIA"
                  acu="84%"
                  tri="76%"

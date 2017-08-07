@@ -5,31 +5,35 @@ import {Router, Scene} from 'react-native-router-flux';
 
 import Login from './app/Login';
 import Resumen from './app/Resumen';
-import Resultado from './app/Resultado';
+import Resultados from './app/Resultados';
+
 
 export default class App extends React.Component {
   render() {
     return (
+
       <Router>
         <Scene key="root">
           <Scene
             key="login"
-            component="Login"
+            component={Login}
             title="Login"
+            hideNavBar
             initial
           />
           <Scene
             key="resumen"
-            component="Resumen"
+            component={Resumen}
             title="Resumen"
           />
           <Scene
-            key="resultado"
-            component="Resultado"
-            title="Resultado"
+            key="resultados"
+            component={Resultados}
+            title="Resultados"
           />
         </Scene>
       </Router>
+
     );
   }
 }
