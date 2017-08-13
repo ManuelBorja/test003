@@ -5,24 +5,19 @@ import {
   View
 } from 'react-native';
 
+import DatoValor from './DatoValor';
+
 export default class Dato extends React.Component {
   render() {
     return (
-
         <View style={styles.detalleResultado}>
             <View style={styles.cabecera} >
               <Text style={styles.titulo}>
                 {this.props.nombre}
               </Text>
             </View>
-
-            <View style={styles.dato}>
-                <Text style={styles.red}>
-                  {this.props.valor}
-                </Text>
-            </View>
+            <DatoValor valor={this.props.valor}/>
         </View>
-
     );
   }
 }
@@ -30,7 +25,6 @@ export default class Dato extends React.Component {
 const styles = StyleSheet.create({
   detalleResultado: {
     alignItems: 'center',
-    backgroundColor:'orange',
     margin:2,
     width:100,
     height:75,
@@ -50,28 +44,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-
-  dato:{
-    alignItems:'center',
-    width:100,
-    backgroundColor:'red',
-    height:50,
-  },
-
-  red:{
-    flexDirection:'column',
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 25,
-  },
-
-  green:{
-    backgroundColor:'green',
-  },
-
-  orange:{
-    backgroundColor:'orange',
-  },
-
 
 });

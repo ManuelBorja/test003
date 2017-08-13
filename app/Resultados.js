@@ -4,11 +4,19 @@ import {
   Text,
   View,
   Button,
-  ScrollView
+  ScrollView,
+  TouchableOpacity
 } from 'react-native';
-import Resultado from './Resultado'
+import Resultado from './Resultado';
+
+import {Actions} from 'react-native-router-flux';
 
 export default class Resultados extends React.Component {
+
+  handlePress() {
+     Actions.gerencias();
+  };
+
   render() {
     return (
       <View style={styles.container}>
@@ -26,23 +34,29 @@ export default class Resultados extends React.Component {
         </View>
 
         <View style={styles.tituloSeccion}>
-          <Button
-            title="Trimestre"
-            color="grey"
-          />
-          <Button
-            title="Acumulado"
-            color="black"
-          />
+          <Text style={{backgroundColor:'grey'}} > Trimestre </Text>
+          <Text style={{backgroundColor:'black'}} > Acumulado </Text>
         </View>
 
         <ScrollView>
-          <Resultado titulo="Social" eficacia="92%" eficiencia="95%" ejecucion="90%" />
-          <Resultado titulo="Ambiental" eficacia="202%" eficiencia="80%" ejecucion="75%" />
-          <Resultado titulo="Proyectos Especiales" eficacia="42%" eficiencia="65%" ejecucion="60%" />
-          <Resultado titulo="Infraestructura y Transporte" eficacia="152%" eficiencia="50%" ejecucion="45%" />
-          <Resultado titulo="Sub Regiones" eficacia="55%" eficiencia="53%" ejecucion="45%" />
-          <Resultado titulo="Económica y Transporte" eficacia="49%" eficiencia="50%" ejecucion="45%" />
+        <TouchableOpacity onPress={() => this.handlePress()} >
+            <Resultado titulo="Social" eficacia="92" eficiencia="95" ejecucion="90" />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => this.handlePress()} >
+          <Resultado titulo="Ambiental" eficacia="202" eficiencia="80" ejecucion="75" />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => this.handlePress()} >
+          <Resultado titulo="Proyectos Especiales" eficacia="42" eficiencia="65" ejecucion="60" />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => this.handlePress()} >
+          <Resultado titulo="Infraestructura y Transporte" eficacia="152" eficiencia="50" ejecucion="45" />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => this.handlePress()} >
+          <Resultado titulo="Sub Regiones" eficacia="55" eficiencia="53" ejecucion="45" />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => this.handlePress()} >
+          <Resultado titulo="Económica y Transporte" eficacia="49" eficiencia="50" ejecucion="45" />
+        </TouchableOpacity>
         </ScrollView>
 
       </View>
@@ -65,8 +79,8 @@ const styles = StyleSheet.create({
   },
   textoTituloBloque: {
     color:'white',
-    fontWeight: 'bold',
     fontSize: 15,
+    paddingLeft:15,
   },
   tituloSeccion: {
     width:400,
@@ -79,7 +93,6 @@ const styles = StyleSheet.create({
     padding:5,
     margin:5,
   },
-
   textoTituloSeccion: {
     fontWeight: 'bold',
     fontSize: 20,

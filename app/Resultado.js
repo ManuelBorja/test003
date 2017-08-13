@@ -7,6 +7,7 @@ import {
 import Dato from './Dato'
 
 export default class Resultado extends React.Component {
+
   render() {
     return (
 
@@ -17,9 +18,9 @@ export default class Resultado extends React.Component {
             </Text>
           </View>
           <View style={styles.datosResultado}>
-              <Dato nombre="Eficacia" valor="100%"/>
-              <Dato nombre="Eficiencia" valor="100%"/>
-              <Dato nombre="Ejecución" valor="100%"/>
+              <Dato nombre="Eficacia" valor={this.props.eficacia}/>
+              <Dato nombre="Eficiencia" valor={this.props.eficiencia}/>
+              <Dato nombre="Ejecución" valor={this.props.ejecucion}/>
           </View>
         </View>
 
@@ -38,12 +39,8 @@ const styles = StyleSheet.create({
   },
   textoTituloResultado: {
     justifyContent:'center',
-    fontWeight: 'bold',
-    fontSize: 15,
   },
   datosResultado: {
     flexDirection:'row',
-    fontWeight: 'bold',
-    fontSize: 15,
   },
 });

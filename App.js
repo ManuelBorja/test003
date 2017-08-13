@@ -6,7 +6,9 @@ import {Router, Scene} from 'react-native-router-flux';
 import Login from './app/Login';
 import Resumen from './app/Resumen';
 import Resultados from './app/Resultados';
-
+import Gerencias from './app/Gerencias';
+import Portafolios from './app/Portafolios';
+import Indicador from './app/Indicador';
 
 export default class App extends React.Component {
   render() {
@@ -30,6 +32,21 @@ export default class App extends React.Component {
             key="resultados"
             component={Resultados}
             title="Resultados"
+          />
+          <Scene
+            key="gerencias"
+            component={Gerencias}
+            title="Gerencias"
+          />
+          <Scene
+            key="portafolios"
+            component={Portafolios}
+            title="Portafolios"
+          />
+          <Scene
+            key="indicador"
+            component={Indicador}
+            title="Indicador"
           />
         </Scene>
       </Router>
