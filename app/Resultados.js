@@ -13,11 +13,22 @@ import {Actions} from 'react-native-router-flux';
 
 export default class Resultados extends React.Component {
 
+
+
   handlePress() {
      Actions.gerencias();
   };
 
   render() {
+    const dataResultado = [
+    {'id':1,'titulo':'Social','eficacia':'92','eficiencia':'95','ejecucion':'90'},
+    {'id':2,'titulo':'Ambiental','eficacia':'202','eficiencia':'80','ejecucion':'75'},
+    {'id':3,'titulo':'Proyectos Especiales','eficacia':'42','eficiencia':'65','ejecucion':'60'},
+    {'id':4,'titulo':'Infraestructura y Transporte','eficacia':'152','eficiencia':'50','ejecucion':'45'},
+    {'id':5,'titulo':'Sub Regiones','eficacia':'55','eficiencia':'95','ejecucion':'45'},
+    {'id':6,'titulo':'Económica y Transporte','eficacia':'49','eficiencia':'50','ejecucion':'45'},
+    ];
+
     return (
       <View style={styles.container}>
 
@@ -39,24 +50,16 @@ export default class Resultados extends React.Component {
         </View>
 
         <ScrollView>
-        <TouchableOpacity onPress={() => this.handlePress()} >
-            <Resultado titulo="Social" eficacia="92" eficiencia="95" ejecucion="90" />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.handlePress()} >
-          <Resultado titulo="Ambiental" eficacia="202" eficiencia="80" ejecucion="75" />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.handlePress()} >
-          <Resultado titulo="Proyectos Especiales" eficacia="42" eficiencia="65" ejecucion="60" />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.handlePress()} >
-          <Resultado titulo="Infraestructura y Transporte" eficacia="152" eficiencia="50" ejecucion="45" />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.handlePress()} >
-          <Resultado titulo="Sub Regiones" eficacia="55" eficiencia="53" ejecucion="45" />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.handlePress()} >
-          <Resultado titulo="Económica y Transporte" eficacia="49" eficiencia="50" ejecucion="45" />
-        </TouchableOpacity>
+          {
+            dataResultado.map(res => {
+              return (
+                <TouchableOpacity key={res.id} onPress={() => this.handlePress()} >
+                    <Resultado data={res} />
+                </TouchableOpacity>
+              )
+            })
+          
+          }
         </ScrollView>
 
       </View>

@@ -17,6 +17,16 @@ export default class Gerencias extends React.Component {
      Actions.portafolios();
   };
   render() {
+
+    const dataGerencia = [
+    {'id':1,'titulo':'Gerencia de Agricultura','eficacia':'202','eficiencia':'80','ejecucion':'75'},
+    {'id':2,'titulo':'Gerencia Regional de Energia y Minas','eficacia':'42','eficiencia':'65','ejecucion':'60'},
+    {'id':3,'titulo':'Gerencia Regional de Salud','eficacia':'152','eficiencia':'50','ejecucion':'45'},
+    {'id':4,'titulo':'Gerencia Regional de Trabajo y Promoción del Empleo','eficacia':'55','eficiencia':'53','ejecucion':'45'},
+    {'id':5,'titulo':'Gerencia Regional de Transportes y comunicaciones','eficacia':'55','eficiencia':'95','ejecucion':'45'},
+    {'id':6,'titulo':'Gerencia Regional de Vivienda y Saneamiento','eficacia':'0','eficiencia':'0','ejecucion':'0'},
+    ];
+
     return (
       <View style={styles.container}>
 
@@ -33,15 +43,16 @@ export default class Gerencias extends React.Component {
         </View>
 
         <ScrollView>
-          <TouchableOpacity onPress={() => this.handlePress()} >
-              <Resultado titulo="Gerencia de Agricultura" eficacia="-" eficiencia="0" ejecucion="0" />
-          </TouchableOpacity>
-
-          <Resultado titulo="Gerencia Regional de Energía y Minas" eficacia="202" eficiencia="80" ejecucion="75" />
-          <Resultado titulo="Gerencia Regional de Salud" eficacia="42" eficiencia="65" ejecucion="60" />
-          <Resultado titulo="Gerencia Regional de Trabajo y Promoción del Empleo" eficacia="152" eficiencia="50" ejecucion="45" />
-          <Resultado titulo="Gerencia Regional de Transportes y comunicaciones" eficacia="55" eficiencia="53" ejecucion="45" />
-          <Resultado titulo="Gerencia Regional de Vivienda y Saneamiento" eficacia="49" eficiencia="50" ejecucion="45" />
+          {
+            dataGerencia.map(res => {
+              return (
+                <TouchableOpacity key={res.id} onPress={() => this.handlePress()} >
+                    <Resultado data={res} />
+                </TouchableOpacity>
+              )
+            })
+          
+          }
         </ScrollView>
 
       </View>

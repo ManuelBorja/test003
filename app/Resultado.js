@@ -9,18 +9,21 @@ import Dato from './Dato'
 export default class Resultado extends React.Component {
 
   render() {
+
+    const {titulo,eficacia,eficiencia,ejecucion} = this.props.data;
+
     return (
 
         <View style={styles.resultado}>
           <View style={styles.tituloResultado}>
             <Text style={styles.textoTituloResultado}>
-              {this.props.titulo}
+              {titulo}
             </Text>
           </View>
           <View style={styles.datosResultado}>
-              <Dato nombre="Eficacia" valor={this.props.eficacia}/>
-              <Dato nombre="Eficiencia" valor={this.props.eficiencia}/>
-              <Dato nombre="Ejecución" valor={this.props.ejecucion}/>
+              <Dato nombre="Eficacia" valor={eficacia}/>
+              <Dato nombre="Eficiencia" valor={eficiencia}/>
+              <Dato nombre="Ejecución" valor={ejecucion}/>
           </View>
         </View>
 
