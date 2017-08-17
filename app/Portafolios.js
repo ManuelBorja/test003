@@ -14,8 +14,9 @@ import Resultado from './Resultado';
 
 export default class Portafolios extends React.Component {
 
-  handlePress() {
-     Actions.indicador();
+  handlePress(tit) {
+     console.log(tit);
+     Actions.indicador({padre:tit});
   };
 
   render() {
@@ -41,7 +42,10 @@ export default class Portafolios extends React.Component {
 
         <View style={styles.tituloSeccion}>
           <Text style={styles.textoTituloSeccion}>
-            Portafolios
+            Protafolios de : 
+          </Text>          
+          <Text style={styles.textoTituloSeccion}>
+            {this.props.padre}
           </Text>
         </View>
 
@@ -49,7 +53,7 @@ export default class Portafolios extends React.Component {
           {
             dataPortafolio.map(res => {
               return (
-                <TouchableOpacity key={res.id} onPress={() => this.handlePress()} >
+                <TouchableOpacity key={res.id} onPress={() => this.handlePress(res.titulo)} >
                     <Resultado data={res} />
                 </TouchableOpacity>
               )

@@ -13,8 +13,9 @@ import {Actions} from 'react-native-router-flux';
 import Resultado from './Resultado';
 
 export default class Gerencias extends React.Component {
-  handlePress() {
-     Actions.portafolios();
+  handlePress(tit) {
+     console.log(tit);
+     Actions.portafolios({padre:tit});
   };
   render() {
 
@@ -38,7 +39,10 @@ export default class Gerencias extends React.Component {
 
         <View style={styles.tituloSeccion}>
           <Text style={styles.textoTituloSeccion}>
-            Gerencias
+            Gerencias del sector
+          </Text>          
+          <Text style={styles.textoTituloSeccion}>
+            {this.props.padre}
           </Text>
         </View>
 
@@ -46,7 +50,7 @@ export default class Gerencias extends React.Component {
           {
             dataGerencia.map(res => {
               return (
-                <TouchableOpacity key={res.id} onPress={() => this.handlePress()} >
+                <TouchableOpacity key={res.id} onPress={() => this.handlePress(res.titulo)} >
                     <Resultado data={res} />
                 </TouchableOpacity>
               )

@@ -15,13 +15,7 @@ export default class Indicador extends React.Component {
   render() {
 
     const dataIndicador = [
-    {'id':1,'titulo':'Gerencia de Agricultura','eficacia':'202','eficiencia':'80','ejecucion':'75'},
-    {'id':2,'titulo':'Gerencia Regional de Energia y Minas','eficacia':'42','eficiencia':'65','ejecucion':'60'},
-    {'id':3,'titulo':'Gerencia Regional de Salud','eficacia':'152','eficiencia':'50','ejecucion':'45'},
-    {'id':4,'titulo':'Gerencia Regional de Trabajo y Promoción del Empleo','eficacia':'55','eficiencia':'53','ejecucion':'45'},
-    {'id':5,'titulo':'Gerencia Regional de Transportes y comunicaciones','eficacia':'55','eficiencia':'95','ejecucion':'45'},
-    {'id':6,'titulo':'Gerencia Regional de Vivienda y Saneamiento','eficacia':'0','eficiencia':'0','ejecucion':'0'},
-    ];
+    {'id':1,'titulo':'Km. Camino de Canal mantenido','unidad':'KM','eficacia':'202','eficiencia':'80','ejecucion':'75'}, ];
 
     return (
       <View style={styles.container}>
@@ -29,6 +23,12 @@ export default class Indicador extends React.Component {
         <View style={styles.tituloBloque}>
           <Text style={styles.textoTituloBloque}>
             INSTITUCIONAL
+          </Text>
+        </View>
+
+        <View style={styles.tituloSeccion}>
+          <Text style={styles.textoTituloSeccion}>
+            Portafolio de {this.props.padre}
           </Text>
         </View>
 
@@ -42,7 +42,14 @@ export default class Indicador extends React.Component {
           {
             dataIndicador.map(res => {
               return (
-                    <Resultado key={res.id} data={res} />
+                    <View>
+                      <Resultado key={res.id} data={res} />
+                      <View style={styles.tituloSeccion}>
+                        <Text style={styles.textoTituloSeccion}>
+                          Unidad {res.unidad}
+                        </Text>
+                      </View>
+                    </View>
               )
             })
           

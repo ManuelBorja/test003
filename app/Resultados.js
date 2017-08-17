@@ -13,10 +13,9 @@ import {Actions} from 'react-native-router-flux';
 
 export default class Resultados extends React.Component {
 
-
-
-  handlePress() {
-     Actions.gerencias();
+  handlePress(tit) {
+     console.log(tit);
+     Actions.gerencias({padre:tit});
   };
 
   render() {
@@ -53,7 +52,7 @@ export default class Resultados extends React.Component {
           {
             dataResultado.map(res => {
               return (
-                <TouchableOpacity key={res.id} onPress={() => this.handlePress()} >
+                <TouchableOpacity key={res.id} onPress={() => this.handlePress(res.titulo)} >
                     <Resultado data={res} />
                 </TouchableOpacity>
               )
