@@ -6,10 +6,11 @@ import {
   Button,
   ScrollView
 } from 'react-native';
-
+import { VictoryLine, VictoryChart, VictoryTheme } from "victory-native";
 import {Actions} from 'react-native-router-flux';
 import IndicadorData from './indicadorData';
 import Resultado from './Resultado';
+import Grafico from './Grafico';
 
 export default class Indicador extends React.Component {
   render() {
@@ -43,21 +44,29 @@ export default class Indicador extends React.Component {
             dataIndicador.map(res => {
               return (
                     <View key={res.id}>
-                      <View style={styles.tituloSeccion}>
-                        <Text style={styles.textoTituloSeccion}>
-                          Indicador
-                        </Text>
-                        <Text style={styles.textoTituloSeccion}>
-                          {res.indicador}
-                        </Text>
+                      <View style={styles.Indicador}>
+                        <View style={styles.tituloIndicador}>
+                          <Text style={styles.textoTituloIndicador}>
+                            Indicador
+                          </Text>
+                        </View>
+                        <View style={styles.datoIndicador}>
+                          <Text style={styles.textoDatoIndicador}>
+                            {res.indicador}
+                          </Text>
+                        </View>
                       </View>
-                      <View style={styles.tituloSeccion}>
-                        <Text style={styles.textoTituloSeccion}>
-                          Unidad
-                        </Text>
-                        <Text style={styles.textoTituloSeccion}>
-                          {res.unidad}
-                        </Text>
+                      <View style={styles.Indicador}>
+                        <View style={styles.tituloIndicador}>
+                          <Text style={styles.textoTituloIndicador}>
+                            Unidad
+                          </Text>
+                        </View>
+                        <View style={styles.datoIndicador}>
+                          <Text style={styles.textoDatoIndicador}>
+                            {res.unidad}
+                          </Text>
+                        </View>
                       </View>
                       <Resultado data={res} />
                     </View>
@@ -67,6 +76,39 @@ export default class Indicador extends React.Component {
           }
 
           <IndicadorData/>
+
+          <Grafico titulo="EFICACIA"
+                   acu="84%"
+                   tri="76%"
+                   data={[
+                     { x: '1', y: 74 },
+                     { x: '2', y: 80 },
+                     { x: '3', y: 70 },
+                     { x: '4', y: 76 }
+                   ]}
+          />
+
+          <Grafico titulo="EFICIENCIA"
+                   acu="96%"
+                   tri="82%"
+                   data={[
+                     { x: '1', y: 105 },
+                     { x: '2', y: 100 },
+                     { x: '3', y: 86 },
+                     { x: '4', y: 82 }
+                   ]}
+          />
+
+          <Grafico titulo="EJECUCIÓN PRESUPUESTAL"
+                   acu="88%"
+                   tri="92%"
+                   data={[
+                     { x: '1', y: 70 },
+                     { x: '2', y: 80 },
+                     { x: '3', y: 85 },
+                     { x: '4', y: 92 }
+                   ]}
+          />
 
         </ScrollView>
       </View>
@@ -106,6 +148,22 @@ const styles = StyleSheet.create({
   textoTituloSeccion: {
     fontWeight: 'bold',
     fontSize: 20,
+  },
+  Indicador: {
+    flexDirection:'row',
+    backgroundColor:'#809fff',
+  },
+  tituloIndicador: {
+    width:80,
+    margin:5,
+  },
+  datoIndicador: {
+    margin:5,
+  },
+  textoTituloIndicador: {
+    fontWeight: 'bold',
+    fontSize: 15,
+    color:'white',
   },
 
 });
