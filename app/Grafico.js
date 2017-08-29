@@ -21,8 +21,8 @@ export default class Grafico extends React.Component {
             />
           </VictoryChart>
           <View style={styles.Dato}>
-            <Text style={styles.tituloDato}>{"ACU :"}{this.props.acu}</Text>
-            <Text style={styles.tituloDato}>{"TRI :"}{this.props.tri}</Text>
+            <Text style={styles.tituloDato}>{"ACU :"}{this.props.acu}%</Text>
+            <Text style={styles.tituloDato}>{"TRI :"}{this.props.tri}%</Text>
           </View>
       </View>
     );
