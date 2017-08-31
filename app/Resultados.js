@@ -8,10 +8,27 @@ import {
   TouchableOpacity
 } from 'react-native';
 import Resultado from './Resultado';
-
 import {Actions} from 'react-native-router-flux';
 
+import api from '../util/api';
+
 export default class Resultados extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      resultado: []
+    }
+  }
+
+  componentWillMount(){
+    api.getResultado().then((res) => {
+      this.setState({
+        resumen: res.resultado,
+        nombre: res.resultado[0].titulo
+      });
+    });
+  };
 
   handlePress(tit) {
      console.log(tit);
@@ -48,6 +65,8 @@ export default class Resultados extends React.Component {
           <Text style={{backgroundColor:'black'}} > Acumulado </Text>
         </View>
 
+       console.warn(this.state.nombre);        
+
         <ScrollView>
           {
             dataResultado.map(res => {
@@ -57,7 +76,7 @@ export default class Resultados extends React.Component {
                 </TouchableOpacity>
               )
             })
-          
+
           }
         </ScrollView>
 

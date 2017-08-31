@@ -18,7 +18,8 @@ export default class Resumen extends React.Component {
   componentWillMount(){
     api.getResumen().then((res) => {
       this.setState({
-        resumen: res.resumen
+        resumen: res.resumen,
+        nombre: res.resumen[0].acu
       });
     });
   };
@@ -35,8 +36,7 @@ export default class Resumen extends React.Component {
       {id:3,'nombre':'EJECUCIÓN PRESUPUESTAL','acu':88,'tri':92,'data':[{ x: '1', y: 70 },{ x: '2', y: 80 },{ x: '3', y: 85 },{ x: '4', y: 92 }]},
     ];
 
-    console.warn(dataResumen);
-
+    //console.warn(this.state.nombre);
 
     return (
       <View style={styles.Container} >
@@ -49,7 +49,7 @@ export default class Resumen extends React.Component {
 
         <ScrollView>
         {
-          dataResumen.map(res => {
+          this.state.resumen.map(res => {
             return (
 
               <Grafico key={res.id}
