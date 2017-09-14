@@ -24,7 +24,7 @@ export default class Resultados extends React.Component {
   componentWillMount(){
     api.getResultado().then((res) => {
       this.setState({
-        resumen: res.resultado,
+        resultado: res.resultado,
         nombre: res.resultado[0].titulo
       });
     });
@@ -44,6 +44,8 @@ export default class Resultados extends React.Component {
     {'id':5,'titulo':'Sub Regiones','eficacia':'55','eficiencia':'95','ejecucion':'45'},
     {'id':6,'titulo':'Económica y Transporte','eficacia':'49','eficiencia':'50','ejecucion':'45'},
     ];
+
+    //console.warn(this.state.nombre);  
 
     return (
       <View style={styles.container}>
@@ -65,11 +67,9 @@ export default class Resultados extends React.Component {
           <Text style={{backgroundColor:'black'}} > Acumulado </Text>
         </View>
 
-       console.warn(this.state.nombre);        
-
         <ScrollView>
           {
-            dataResultado.map(res => {
+            this.state.resultado.map(res => {
               return (
                 <TouchableOpacity key={res.id} onPress={() => this.handlePress(res.titulo)} >
                     <Resultado data={res} />
