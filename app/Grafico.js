@@ -4,6 +4,9 @@ import { VictoryLine, VictoryChart, VictoryTheme } from "victory-native";
 
 export default class Grafico extends React.Component {
   render() {
+
+    //console.warn(this.props.data);
+
     return (
       <View style={styles.Container} >
           <Text style={styles.tituloGrafico}>{this.props.titulo}</Text>

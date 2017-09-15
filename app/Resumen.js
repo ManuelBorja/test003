@@ -36,7 +36,7 @@ export default class Resumen extends React.Component {
       {id:3,'nombre':'EJECUCIÓN PRESUPUESTAL','acu':88,'tri':92,'data':[{ x: '1', y: 70 },{ x: '2', y: 80 },{ x: '3', y: 85 },{ x: '4', y: 92 }]},
     ];
 
-    //console.warn(this.state.nombre);
+    //console.warn(this.state.resumen);
 
     return (
       <View style={styles.Container} >

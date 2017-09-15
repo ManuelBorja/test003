@@ -9,10 +9,27 @@ import {
 } from 'react-native';
 
 import {Actions} from 'react-native-router-flux';
-
 import Resultado from './Resultado';
 
+import api from '../util/api';
+
 export default class Gerencias extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      gerencias: []
+    }
+  }
+
+  componentWillMount(){
+    api.getGerencias().then((res) => {
+      this.setState({
+        gerencias: res.gerencias
+      });
+    });
+  };
+
   handlePress(tit) {
      console.log(tit);
      Actions.portafolios({padre:tit});
@@ -27,6 +44,8 @@ export default class Gerencias extends React.Component {
     {'id':5,'titulo':'Gerencia Regional de Transportes y comunicaciones','eficacia':'55','eficiencia':'95','ejecucion':'45'},
     {'id':6,'titulo':'Gerencia Regional de Vivienda y Saneamiento','eficacia':'0','eficiencia':'0','ejecucion':'0'},
     ];
+
+    //console.warn(this.state.gerencias);  
 
     return (
       <View style={styles.container}>
@@ -48,7 +67,7 @@ export default class Gerencias extends React.Component {
 
         <ScrollView>
           {
-            dataGerencia.map(res => {
+            this.state.gerencias.map(res => {
               return (
                 <TouchableOpacity key={res.id} onPress={() => this.handlePress(res.titulo)} >
                     <Resultado data={res} />

@@ -45,7 +45,7 @@ export default class Resultados extends React.Component {
     {'id':6,'titulo':'Económica y Transporte','eficacia':'49','eficiencia':'50','ejecucion':'45'},
     ];
 
-    //console.warn(this.state.nombre);  
+    //console.warn(this.state.resultado);  
 
     return (
       <View style={styles.container}>
