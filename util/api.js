@@ -23,6 +23,15 @@ var api = {
            .catch((error) => {
             return error;
           });
+  },
+
+  getPortafolios(){
+    var url='http://api.progobernabilidad.org.pe/Tablero/portafolios';
+    return fetch(url)
+           .then((res) => res.json())
+           .catch((error) => {
+            return error;
+          });
   },  
 
 };

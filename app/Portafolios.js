@@ -9,10 +9,26 @@ import {
 } from 'react-native';
 
 import {Actions} from 'react-native-router-flux';
-
 import Resultado from './Resultado';
 
+import api from '../util/api';
+
 export default class Portafolios extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      portafolios: []
+    }
+  }
+
+  componentWillMount(){
+    api.getPortafolios().then((res) => {
+      this.setState({
+        portafolios: res.portafolios
+      });
+    });
+  };
 
   handlePress(tit) {
      console.log(tit);
@@ -30,6 +46,7 @@ export default class Portafolios extends React.Component {
     {'id':6,'titulo':'Gerencia Regional de Vivienda y Saneamiento','eficacia':'0','eficiencia':'0','ejecucion':'0'},
     ];
 
+    //console.warn(this.state.portafolios);
 
     return (
       <View style={styles.container}>
@@ -51,7 +68,7 @@ export default class Portafolios extends React.Component {
 
         <ScrollView>
           {
-            dataPortafolio.map(res => {
+            this.state.portafolios.map(res => {
               return (
                 <TouchableOpacity key={res.id} onPress={() => this.handlePress(res.titulo)} >
                     <Resultado data={res} />

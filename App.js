@@ -10,6 +10,19 @@ import Gerencias from './app/Gerencias';
 import Portafolios from './app/Portafolios';
 import Indicador from './app/Indicador';
 
+/*
+TODO :
+1. Vista de detalle
+2. Actualizar fuera de linea.
+	2.1 Botón actualizar
+	2.2 Ejecutar api remoto y almacenarlo en contenedores en memoria
+	2.3 Grabar contenedores de memoria en dispositivo
+	2.4 Recuperar datos grabados en dispositios
+
+3. Validación login
+
+*/
+
 export default class App extends React.Component {
   render() {
     return (
