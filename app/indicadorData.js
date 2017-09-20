@@ -10,11 +10,13 @@ import {
 export default class Indicador extends React.Component {
   render() {
 
+   const dt = this.props.data;
+
    const detalle = [
-      {'id':'1','titulo':'Meta Programada','t1':'200','t2':'25','t3':'25','t4':'25'},
-      {'id':'2','titulo':'Meta ejecutada','t1':'25','t2':'200','t3':'25','t4':'25'},
-      {'id':'3','titulo':'Presupuesto programado (Nuevos soles)','t1':'25','t2':'25','t3':'200','t4':'25'},
-      {'id':'4','titulo':'Presupuesto ejecutado (Nuevo soles)','t1':'25','t2':'25','t3':'25','t4':'200'},
+      {'id':'1','titulo':'Meta Programada','t1':dt.MP_T1,'t2':dt.MP_T2,'t3':dt.MP_T3,'t4':dt.MP_T4},
+      {'id':'2','titulo':'Meta ejecutada','t1':dt.ME_T1,'t2':dt.ME_T2,'t3':dt.ME_T3,'t4':dt.ME_T4},
+      {'id':'3','titulo':'Presupuesto programado (Nuevos soles)','t1':dt.PP_T1,'t2':dt.PP_T2,'t3':dt.PP_T3,'t4':dt.PP_T4},
+      {'id':'4','titulo':'Presupuesto ejecutado (Nuevo soles)','t1':dt.PE_T1,'t2':dt.PE_T2,'t3':dt.PE_T3,'t4':dt.PE_T4},
       {'id':'5','titulo':'Ejecución %','t1':'150','t2':'25','t3':'25','t4':'25'},
     ]
 

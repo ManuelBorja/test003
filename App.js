@@ -19,7 +19,8 @@ TODO :
 	2.3 Grabar contenedores de memoria en dispositivo
 	2.4 Recuperar datos grabados en dispositios
 
-3. Validación login
+3. Realizar los filtros localmente
+4. Validación login
 
 */
 

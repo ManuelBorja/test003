@@ -34,6 +34,15 @@ var api = {
           });
   },  
 
+  getIndicadores(){
+    var url='http://api.progobernabilidad.org.pe/Tablero/indicadores';
+    return fetch(url)
+           .then((res) => res.json())
+           .catch((error) => {
+            return error;
+          });
+  },  
+
 };
 
 module.exports = api;

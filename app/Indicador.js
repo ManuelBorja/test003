@@ -12,11 +12,33 @@ import IndicadorData from './indicadorData';
 import Resultado from './Resultado';
 import Grafico from './Grafico';
 
+import api from '../util/api';
+
 export default class Indicador extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      indicador: []
+    }
+  }
+
+  componentWillMount(){
+    api.getIndicadores().then((res) => {
+      this.setState({
+        indicador: res.indicadores[3]
+      });
+    });
+  };
+
   render() {
 
     const dataIndicador = [
     {'id':1,'titulo':'','indicador':'Km. Camino de Canal mantenido','unidad':'KM','eficacia':'202','eficiencia':'80','ejecucion':'75'}, ];
+
+    const res = this.state.indicador;
+
+    //console.warn(this.state.indicador);  
 
     return (
       <View style={styles.container}>
@@ -41,41 +63,40 @@ export default class Indicador extends React.Component {
 
         <ScrollView>
           {
-            dataIndicador.map(res => {
-              return (
-                    <View key={res.id}>
-                      <View style={styles.Indicador}>
-                        <View style={styles.tituloIndicador}>
-                          <Text style={styles.textoTituloIndicador}>
-                            Indicador
-                          </Text>
-                        </View>
-                        <View style={styles.datoIndicador}>
-                          <Text style={styles.textoDatoIndicador}>
-                            {res.indicador}
-                          </Text>
-                        </View>
-                      </View>
-                      <View style={styles.Indicador}>
-                        <View style={styles.tituloIndicador}>
-                          <Text style={styles.textoTituloIndicador}>
-                            Unidad
-                          </Text>
-                        </View>
-                        <View style={styles.datoIndicador}>
-                          <Text style={styles.textoDatoIndicador}>
-                            {res.unidad}
-                          </Text>
-                        </View>
-                      </View>
-                      <Resultado data={res} />
-                    </View>
-              )
-            })
+
+              <View key={res.id}>
+                <View style={styles.Indicador}>
+                  <View style={styles.tituloIndicador}>
+                    <Text style={styles.textoTituloIndicador}>
+                      Indicador
+                    </Text>
+                  </View>
+                  <View style={styles.datoIndicador}>
+                    <Text style={styles.textoDatoIndicador}>
+                      {res.indicador}
+                    </Text>
+                  </View>
+                </View>
+                <View style={styles.Indicador}>
+                  <View style={styles.tituloIndicador}>
+                    <Text style={styles.textoTituloIndicador}>
+                      Unidad
+                    </Text>
+                  </View>
+                  <View style={styles.datoIndicador}>
+                    <Text style={styles.textoDatoIndicador}>
+                      {res.unidad}
+                    </Text>
+                  </View>
+                </View>
+
+                <Resultado data={res} />
+
+                <IndicadorData data={res} />
+
+              </View>
 
           }
-
-          <IndicadorData/>
 
           <Grafico titulo="EFICACIA"
                    acu="84%"
