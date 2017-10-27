@@ -41,7 +41,7 @@ export default class Resumen extends React.Component {
     return (
       <View style={styles.Container} >
 
-        <StatusBar barstyle="light-content" />
+        <StatusBar hidden={true} />
 
         <TouchableOpacity onPress={() => this.handlePress()} >
                 <Text style={styles.Titulo}>{"INSTITUCIONAL - RESUMEN"}</Text>
