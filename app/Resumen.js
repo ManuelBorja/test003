@@ -19,7 +19,6 @@ export default class Resumen extends React.Component {
     api.getResumen().then((res) => {
       this.setState({
         resumen: res.resumen,
-        nombre: res.resumen[0].acu
       });
     });
   };
