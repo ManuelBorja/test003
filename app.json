@@ -15,7 +15,11 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
+      "bundleIdentifier": "com.progob.tablero",
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.progob.tablero"
     }
   }
 }
