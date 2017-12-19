@@ -1,8 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
 import {Router, Scene} from 'react-native-router-flux';
-
 import Login from './app/Login';
 import Resumen from './app/Resumen';
 import Resultados from './app/Resultados';
@@ -14,10 +11,10 @@ import Indicador from './app/Indicador';
 TODO :
 1. Vista de detalle
 2. Actualizar fuera de linea.
-	2.1 Botón actualizar
-	2.2 Ejecutar api remoto y almacenarlo en contenedores en memoria
-	2.3 Grabar contenedores de memoria en dispositivo
-	2.4 Recuperar datos grabados en dispositios
+  2.1 Botón actualizar
+  2.2 Ejecutar api remoto y almacenarlo en contenedores en memoria
+  2.3 Grabar contenedores de memoria en dispositivo
+  2.4 Recuperar datos grabados en dispositios
 
 3. Realizar los filtros localmente
 4. Validación login
@@ -68,12 +65,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
