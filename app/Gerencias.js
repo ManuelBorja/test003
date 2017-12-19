@@ -35,18 +35,6 @@ export default class Gerencias extends React.Component {
      Actions.portafolios({padre:tit});
   };
   render() {
-
-    const dataGerencia = [
-    {'id':1,'titulo':'Gerencia de Agricultura','eficacia':'202','eficiencia':'80','ejecucion':'75'},
-    {'id':2,'titulo':'Gerencia Regional de Energia y Minas','eficacia':'42','eficiencia':'65','ejecucion':'60'},
-    {'id':3,'titulo':'Gerencia Regional de Salud','eficacia':'152','eficiencia':'50','ejecucion':'45'},
-    {'id':4,'titulo':'Gerencia Regional de Trabajo y Promoción del Empleo','eficacia':'55','eficiencia':'53','ejecucion':'45'},
-    {'id':5,'titulo':'Gerencia Regional de Transportes y comunicaciones','eficacia':'55','eficiencia':'95','ejecucion':'45'},
-    {'id':6,'titulo':'Gerencia Regional de Vivienda y Saneamiento','eficacia':'0','eficiencia':'0','ejecucion':'0'},
-    ];
-
-    //console.warn(this.state.gerencias);  
-
     return (
       <View style={styles.container}>
 

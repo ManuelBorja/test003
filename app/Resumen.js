@@ -18,7 +18,7 @@ export default class Resumen extends React.Component {
   componentWillMount(){
     api.getResumen().then((res) => {
       this.setState({
-        resumen: res.resumen,
+        resumen: res.resumen
       });
     });
   };
@@ -29,7 +29,7 @@ export default class Resumen extends React.Component {
 
   render() {
 
-    console.warn(this.state.resumen);
+    //console.warn(this.state.resumen);
 
     return (
       <View style={styles.Container} >
