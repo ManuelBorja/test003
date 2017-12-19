@@ -29,13 +29,7 @@ export default class Resumen extends React.Component {
 
   render() {
 
-    const dataResumen=[
-      {id:1,'nombre':'EFICACIA','acu':74,'tri':76,'data':[{ x: '1', y: 74 },{ x: '2', y: 80 },{ x: '3', y: 70 },{ x: '4', y: 76 }]},
-      {id:2,'nombre':'EFICIENCIA','acu':96,'tri':82,'data':[{ x: '1', y: 105 },{ x: '2', y: 100 },{ x: '3', y: 86 },{ x: '4', y: 82 }]},
-      {id:3,'nombre':'EJECUCIÓN PRESUPUESTAL','acu':88,'tri':92,'data':[{ x: '1', y: 70 },{ x: '2', y: 80 },{ x: '3', y: 85 },{ x: '4', y: 92 }]},
-    ];
-
-    //console.warn(this.state.resumen);
+    console.warn(this.state.resumen);
 
     return (
       <View style={styles.Container} >
@@ -50,7 +44,6 @@ export default class Resumen extends React.Component {
         {
           this.state.resumen.map(res => {
             return (
-
               <Grafico key={res.id}
                        titulo={res.nombre}
                        acu={res.acu}
