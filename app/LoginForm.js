@@ -10,6 +10,8 @@ import {
   StatusBar
 } from 'react-native';
 
+import { CheckBox } from 'react-native-elements';
+
 import { Actions } from 'react-native-router-flux';
 
 export default class LoginForm extends React.Component {
@@ -47,6 +49,11 @@ export default class LoginForm extends React.Component {
 		  style={styles.buttonContainer}>
 		  <Text style={styles.buttonText}>Login</Text>
 		</TouchableOpacity>
+
+		<CheckBox
+		  title='Actualizar'
+		  checked={this.state.checked}
+		/>
 
      </View>
      );
