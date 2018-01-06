@@ -52,7 +52,7 @@ export default class LoginForm extends React.Component {
 
 		<CheckBox
 		  title='Actualizar'
-		  checked={this.state.checked}
+		  checked={false}
 		/>
 
      </View>
