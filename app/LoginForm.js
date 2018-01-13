@@ -16,8 +16,21 @@ import { Actions } from 'react-native-router-flux';
 
 export default class LoginForm extends React.Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+      actualizar: false
+    }
+  }
+
+  handleCheck(){
+	this.setState(previo => { 
+		return { actualizar: !previo.actualizar };
+	}
+  }
+
   handlePress() {
-	Actions.resumen();
+	Actions.resumen({actualizar:this.state.actualizar});
   };
 
   render() {
@@ -52,7 +65,8 @@ export default class LoginForm extends React.Component {
 
 		<CheckBox
 		  title='Actualizar'
-		  checked={false}
+		  checked={this.state.actualizar}
+		  onPress={ () => this.handleCheck() } 
 		/>
 
      </View>
