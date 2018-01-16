@@ -1,4 +1,23 @@
 var api = {
+
+  actualizar(){
+    this.getResumen().then((res) => {
+      AsyncStorage.setItem(
+        resumen: JSON.stringify(res.resumen)
+      );
+    });
+  },
+
+  lResumen = async () => {
+     try{
+        return await AsyncStorage.getItem('resumen')
+                                 .then( (resumen) => JSON.parse(resumen) )
+                                 .catch( (error) => return error );
+     }catch(error){
+        alert(error);
+     }
+  },
+
   getResumen(){
     var url='http://api.progobernabilidad.org.pe/resumen';
     return fetch(url)

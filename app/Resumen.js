@@ -17,7 +17,11 @@ export default class Resumen extends React.Component {
 
   componentWillMount(){
     console.log(this.props.actualizar);
-    api.getResumen().then((res) => {
+    if(this.props.actualiar){
+       api.actualizar()     
+    }
+    
+    api.lResumen().then((res) => {
       this.setState({
         resumen: res.resumen
       });
