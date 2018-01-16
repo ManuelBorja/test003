@@ -25,7 +25,7 @@ export default class LoginForm extends React.Component {
 
   handleCheck(){
 	this.setState(previo => { 
-		return { actualizar: !previo.actualizar };
+		return { actualizar: !previo.actualizar }
 	}
   }
 
