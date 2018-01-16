@@ -25,13 +25,15 @@ export default class LoginForm extends React.Component {
 
   handleCheck(){
 	this.setState(previo => { 
-		return { actualizar: !previo.actualizar }
-	}
+	  return { actualizar: !previo.actualizar }
+	})
   }
 
   handlePress() {
-	Actions.resumen({actualizar:this.state.actualizar});
-  };
+	Actions.resumen( 
+             { actualizar: this.state.actualizar } 
+        )
+  }
 
   render() {
   	return(
